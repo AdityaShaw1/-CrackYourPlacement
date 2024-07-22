@@ -1,0 +1,14 @@
+class Solution{
+public:
+	string removeDuplicates(string str) {
+	    // code here
+	    string ans;
+	    map<char,int> m;
+	    for(auto x:str){
+	        if(!m[x])
+	        ans+=x;
+	        m[x]++;
+	    }
+	    return ans;
+	}
+};
