@@ -1,0 +1,19 @@
+class Solution {
+public:
+    string convertToTitle(int columnNumber) {
+        int col=columnNumber;
+        string s="",s1="";
+        while(col>0){
+            int r = (col-1)%26;
+            s=s+((char)(r+'A'));
+            col=(col-1)/26;
+        }
+        int j=0;
+        for(int i=s.size()-1;i>=0;i--)
+        {
+            s1+=s[i];
+            j++;
+        }
+        return s1;
+    }
+};
