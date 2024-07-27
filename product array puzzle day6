@@ -1,0 +1,28 @@
+class Solution{
+  public:
+    // nums: given vector
+    // return the Product vector P that hold product except self at each index
+    vector<long long int> productExceptSelf(vector<long long int>& nums, int n) {
+       
+        //code here  
+        long long int left=1,right=1;
+        vector<long long int> l(n,0),r(n,0),result(n,0);
+        l[0]=1;
+        for(int i=1;i<n;i++)
+        {
+            l[i]=l[i-1]*nums[i-1];
+        }
+        r[n-1]=1;
+        for(int j=n-2;j>=0;j--)
+        {
+            r[j]=r[j+1]*nums[j+1];
+        }
+       
+        
+        for(int p=0;p<n;p++)
+        {
+            result[p]=l[p]*r[p];
+        }
+        return result;
+    }
+};
